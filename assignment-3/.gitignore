@@ -1,3 +1,1 @@
-
-# ignore a single file
-/data-structures/assignment-3/cred.txt
+*cred.txt*.pyc, __pycache__, .*
