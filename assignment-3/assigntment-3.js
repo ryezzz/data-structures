@@ -18,6 +18,7 @@ var apiKey = fs.readFileSync('cred.txt*.pyc, __pycache__, .*','utf8');
 // Declares meetingData array and parses and pushes text file to meetingsData array
 
 var meetingsData = [];
+var finalProduct = [];
 
 $("tr").children().each(function(i, elem){
     if($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px"){
@@ -49,15 +50,32 @@ async.eachSeries(meetingsData, function(value, callback) {
     
      //  setTimeout calls back eachSeries function after 250 milliseconds 
    
-    setTimeout(callback, 40);
+    setTimeout(callback, 250);
     
     //  function fires at end the eachSeries loop
 }, function() {
     
+// I logged array
+console.log(JSON.stringify(meetingsDataForObject));
+// I double checked that meetingsDataForObject is an array
+console.log(Array.isArray(meetingsDataForObject));
+
+// I printed array to a .txt file
+require('fs').writeFile(
+    './array.txt',
+    JSON.stringify(meetingsDataForObject),
+    function (err) {
+        if (err) {
+            console.error('error');
+        }
+    }
+);    
     
-    console.log(JSON.stringify(meetingsDataForObject));
 
 });
+
+
+
 
 // NOTES FOR FIGURING OUT THE FINAL SECTION
 
