@@ -18,11 +18,10 @@ var apiKey = fs.readFileSync('cred.txt*.pyc, __pycache__, .*','utf8');
 // Declares meetingData array and parses and pushes text file to meetingsData array
 
 var meetingsData = [];
-var finalProduct = [];
 
 $("tr").children().each(function(i, elem){
     if($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px"){
-        var firstHalf = $(elem).contents().get(6).nodeValue.trim().replace(/,.*,/, '').split(',')[0].split('(')[0] +" NY";
+        var firstHalf = $(elem).contents().get(6).nodeValue.trim().replace(/,.*,/, '').split(',')[0].split('(')[0] +" NYC";
         var secondHalf = $(elem).contents().get(8).nodeValue.trim().slice(-6);
         meetingsData.push(firstHalf+secondHalf);
     }
@@ -62,7 +61,7 @@ console.log(Array.isArray(meetingsDataForObject));
 
 // I printed array to a .txt file
 require('fs').writeFile(
-    './array.txt',
+    './array.JSON',
     JSON.stringify(meetingsDataForObject),
     function (err) {
         if (err) {
@@ -91,7 +90,7 @@ require('fs').writeFile(
 // I somehow merged my meetingsDataForObject variable with my thisMeeting Variable so returned to starter code to clean things up
 // I managed to almost finish, but array of objects isn't showing the objects unless I target the index directly
 // used json.stringify method to show everything
-// I made a for loop to target each object individually: I deleted the for loop once I figured out
+// I made a for loop to target each object individually: I deleted the for loop once I figured out that
 
 
 
