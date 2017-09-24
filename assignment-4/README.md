@@ -1,5 +1,9 @@
 Steps/files for assignment 4:
 
+I created an initial database drawing:
+</br>
+https://github.com/ryezzz/data-structures/blob/master/assignment-4/first-db-sketch.png
+
 I modified assignment 3 to write my address data to a .JSON file:
 </br>
 https://github.com/ryezzz/data-structures/blob/master/assignment-3/assigntment-3.js
