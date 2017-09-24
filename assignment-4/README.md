@@ -8,7 +8,7 @@ I ran assignment 3 to create my .JSON file which I pushed to GitHub:
 </br>
 https://github.com/ryezzz/data-structures/blob/master/assignment-3/array.JSON
 
-Then I modified assignment-4.js to add the contents of my .JSON file to files within my "aaobjects" collection.
+Then I modified assignment-4.js to add the contents of my .JSON file to my "aaobjects" collection.
 </br>
 https://github.com/ryezzz/data-structures/blob/master/assignment-4/assignment-4.js
 
