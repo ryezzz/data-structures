@@ -2,7 +2,7 @@ var async = require('async'); // npm install async
 var fs = require('fs');
 
 var links = ['http://visualizedata.github.io/datastructures/data/m01.html',  
-             'git', 
+             'http://visualizedata.github.io/datastructures/data/m02.html', 
              'http://visualizedata.github.io/datastructures/data/m03.html',  
              'http://visualizedata.github.io/datastructures/data/m04.html',  
              'http://visualizedata.github.io/datastructures/data/m05.html',  
