@@ -22,10 +22,8 @@ request('https://raw.githubusercontent.com/ryezzz/data-structures/master/assignm
         if (err) {return console.dir(err);}
 
         var collection = db.collection(collName);
-
         // THIS IS WHERE THE DOCUMENT(S) IS/ARE INSERTED TO MONGO:
-        collection.insert(aadatafiles);
-        // collection.insert(aaData.latLong);
+        collection.insert(aaData);
         db.close();
 
     }); //MongoClient.connect
