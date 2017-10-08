@@ -1,4 +1,5 @@
 var fs = require('fs');
+var request = require('request'); // npm install request
 var cheerio = require('cheerio');
 // var slice = require('node-slice');
 
@@ -13,98 +14,11 @@ var $ = cheerio.load(content, {
 
 //CREATE OBJECT OUTSIDE OF LOOP AND CONDITIONAL
 var dataObj = new Object();
-
-var arrayTest = []; 
-
-// $("td").removeAttr('style') == "border-bottom:1px solid #dedede; width:90px;"
+var dataObjArr = [];
 
 
-// $("td").children().next()(function(i, elem){
-    
-//     function isEmpty (dataPiece, dataProName){
-//         //create an isempty function so that I don't have to repeat this on every element
-//         if (dataPiece) {
-//             //put string within dataObject
-//             dataObj[dataProName] = dataPiece; 
-//         } else {
-//             dataObj[dataProName] = "No " + [dataProName] + " listed";
-//         }
-    
-//     }
-
-//     if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
-//         var dayTime = $(elem)
-//                       .next()
-//                       .text()
-//                       .split(' From ')
-//                       .join()
-//                       .split(' to ')
-//                       .join()
-//                       .split(' Meeting Type ')
-//                       .join()
-//                       .split("   ")
-//                       .join()
-//                       .split(' Special Interest ')
-//                       .join()
-//                       .replace("=", ":")
-//                       .split(',');
-//         //turns into real array
-//         var dayArray = Array.from(dayTime);
-//         // console.log (dayTime); 
-        
-//                         //  isEmpty(dayTime, "test");
-                       
-//                       dayArray.forEach(function callback(currentValue, index, array) {
-//                             // console.log(currentValue);
-//                             console.log(index);
-//                             // console.log(array);
-//                             });
-                      
-                       
-//                 //   dayArray.for(function(elem, j){
-//                 //       console.log(j);
-//                 //       isEmpty(elem[j], "test");
-                      
-//                 //       });
-                        
-//                         // dayTime.forEach(function callback(currentValue, index, array) {
-//                         // dataObj.test = currentValue;
-
-//                         // //your iterator
-//                         // });
-                       
-//                     //   dayTime.each(function(i, elem){
-                            
-//                     //   console.log ($(elem).text());
-                            
-//         // console.log (dayTime);
-//                         //This targets the first day/time. I have to target all of them.
-                        
-                    
-//                         // var day = dayTime[0].replace(' ', '');
-//                         // var startTime = dayTime[1];
-//                         // var endTime  = dayTime[2];
-
-                        
-//                         //     isEmpty (day, "day");
-//                         //     isEmpty (startTime, "start_time");
-//                         //     isEmpty (endTime, "end_time");
-
-//     }   
-    
-//     console.log(dataObj)
-    
-// });
-
-
-
-// old prject structure
 $("td").each(function(i, elem){
     
-    //create dataObj object. Everything is going to go within this object
-    // in order to be within the same object, i have to create this object within this conditional. As soon as I take it outside this loop, it appears as a second obect 
-
-
 
     function isEmpty (dataPiece, dataProName){
         //create an isempty function so that I don't have to repeat this on every element
@@ -118,11 +32,11 @@ $("td").each(function(i, elem){
     }
     
     
-   
     
 if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
     
-    
+//TIME/DAY - I can't get this to loop throught ALL times and days
+
 //splits all elements from day/time TD into an array so that I can target them with an index
          var dayTime = $(elem)
                       .next()
@@ -140,7 +54,8 @@ if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
                       .replace("=", ":")
                       .split(',');
         
-                        //This targets the first day/time. I have to target all of them.
+        
+                //This targets the first day/time. I have to target all of them.
                         var day = dayTime[0].replace(' ', '');
                         var startTime = dayTime[1];
                         var endTime  = dayTime[2];
@@ -152,33 +67,10 @@ if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
                             isEmpty (endTime, "end_time");
                             isEmpty (meetingType, "meeting_type");
                             isEmpty (special, "special_group");
+                            
+                        console.log (dayTime.length);
                         
-                            // for (let j in dayTime) {
-                            //         // var Daysarray = dayTime[j*5].indexOf("days");
-                            //         // //  if (dayTime[j].indexOf("days")){
-                            //              isEmpty (dayTime[j], "Day");
-                            //      }
-                                // }
-        //                 .split(',')[1]
-    //                 .slice(1);
-    
-    // timeBlock.forEach(function(times){
-    //     console.log ("times")
-    // });
-    
-    // timle
-    
-    // var day = $(elem).next().text().trim().split('=').reverse().join("").split('   ');
-    // isEmpty(day, "day");
-    
-    // var type = $(elem).next().text().trim().split('=').reverse().join("").split('   ');
-    // isEmpty(type, "type");
-    
-    // var special = $(elem).next().text().trim().split('=').reverse().join("").split('   ');
-    // isEmpty(special, "special");
-            //   });
-        
-    // }
+                            
         // BUILDING
         var building = $(elem)
                         .children()
@@ -263,11 +155,27 @@ if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
         
         
     // //content of object
-    console.log(dataObj)
+    
+    dataObjArr.push(dataObj);
+ 
+    
+   
     
 }
 
 });
+   console.log(dataObjArr);
+
+ require('fs').writeFile(
+    './array.JSON',
+    JSON.stringify(dataObjArr),
+    function (err) {
+        if (err) {
+            console.error('error');
+        }
+    }
+); 
+   
 
 
 // // Make id number

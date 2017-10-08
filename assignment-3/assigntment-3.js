@@ -17,28 +17,42 @@ var apiKey = fs.readFileSync('cred.txt*.pyc, __pycache__, .*','utf8');
 // _______________________  creating array from assignment_2  _______________________________
 // Declares meetingData array and parses and pushes text file to meetingsData array
 
-var meetingsData = [];
+var addressData = [];
+var buildingData =[];
 
-$("tr").children().each(function(i, elem){
+$("td").each(function(i, elem){
     if($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px"){
+        var building = $(elem).children().first().text();
+        var group = $(elem).eq(6).text();
         var firstHalf = $(elem).contents().get(6).nodeValue.trim().replace(/,.*,/, '').split(',')[0].split('(')[0] +" NYC";
         var secondHalf = $(elem).contents().get(8).nodeValue.trim().slice(-6);
-        meetingsData.push(firstHalf+secondHalf);
+        addressData.push(firstHalf+secondHalf);
+        buildingData.push(building)
     }
 });
+
+
+// $("td").each(function(i, elem){
+//     if($(elem).attr('style') == "margin:0;padding:0;"){
+//         var building = $(elem).children().first().text()
+//         addressData.push(building);
+//     }
+// });
+
 
 
 // _______________________ Console.logs lat and long for each address in meetingsDat _______________________________
 var meetingsDataForObject= [];
     // makes all functions within fire synchronously so that meetingsData is concatenated into
     // thisMeeting object with corresponding geolocation information.
-async.eachSeries(meetingsData, function(value, callback) {
+async.eachSeries(addressData, function(value, callback) {
     // take each address from meetingsData adds web google api address in front and replaces spaces with periods. Returns each as string
     var apiRequest = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + value.split(' ').join('+') + '&key=' + apiKey;
     // create the this meeting object
     var thisMeeting = new Object;
     // set thisMeeting address part of object to the corresponding item in meetingsData
     thisMeeting.address = value;
+    thisMeeting.floor = value;
     
     // google api requist
     request(apiRequest, function(err, resp, body) {
