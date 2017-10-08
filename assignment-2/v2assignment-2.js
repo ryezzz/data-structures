@@ -13,12 +13,10 @@ var $ = cheerio.load(content, {
 });
 
 //CREATE OBJECT OUTSIDE OF LOOP AND CONDITIONAL
-var dataObj = new Object();
 var dataObjArr = [];
 
 
 $("td").each(function(i, elem){
-    
 
     function isEmpty (dataPiece, dataProName){
         //create an isempty function so that I don't have to repeat this on every element
@@ -34,7 +32,7 @@ $("td").each(function(i, elem){
     
     
 if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
-    
+        var dataObj = new Object();
 //TIME/DAY - I can't get this to loop throught ALL times and days
 
 //splits all elements from day/time TD into an array so that I can target them with an index
@@ -56,7 +54,8 @@ if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
         
         
                 //This targets the first day/time. I have to target all of them.
-                        var day = dayTime[0].replace(' ', '');
+                        var day = dayTime[0];
+                        
                         var startTime = dayTime[1];
                         var endTime  = dayTime[2];
                         var meetingType = dayTime[3];
@@ -68,7 +67,7 @@ if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
                             isEmpty (meetingType, "meeting_type");
                             isEmpty (special, "special_group");
                             
-                        console.log (dayTime.length);
+
                         
                             
         // BUILDING
@@ -153,20 +152,18 @@ if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
             dataObj.access = ("yes");
         };
         
-        
-    // //content of object
-    
-    dataObjArr.push(dataObj);
  
-    
-   
-    
-}
+        dataObjArr.push(dataObj);
+    // //content of object
+    // console.log (dataObjArr);
+    }
+
 
 });
-   console.log(dataObjArr);
 
- require('fs').writeFile(
+console.log(dataObjArr)
+
+require('fs').writeFile(
     './array.JSON',
     JSON.stringify(dataObjArr),
     function (err) {
@@ -175,6 +172,14 @@ if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
         }
     }
 ); 
+
+
+  
+
+// FINAL STEP - Make array.JSON file
+
+
+ 
    
 
 

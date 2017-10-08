@@ -16,22 +16,38 @@ var $ = cheerio.load(content, {
 // // I also added the *.pyc, __pycache__, .* hidden file pattern here so it can't be found in C9 by any user other than me
 var apiKey = fs.readFileSync('cred.txt*.pyc, __pycache__, .*','utf8');
 
+
+// // _______________________import JSON from other project_______________________________
+
+// Read Synchrously
+console.log("\n *START* \n");
+
+request('https://raw.githubusercontent.com/ryezzz/data-structures/master/assignment-2/array.JSON', function(error, response, body) {
+    var dataFromJSON = JSON.parse(body);
+    console.log( dataFromJSON)
+    // addressData.push(dataFromJSON);
+    
+
+
+
+
 // _______________________  creating array from assignment_2  _______________________________
 // Declares meetingData array and parses and pushes text file to meetingsData array
+// var newObj = Object.create(dataFromJSON);
+// console.log (newObj);
+// var addressData = dataFromJSON;
+// var buildingData =[];
 
-var addressData = [];
-var buildingData =[];
-
-$("td").each(function(i, elem){
-    if($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px"){
-        var building = $(elem).children().first().text();
-        var group = $(elem).eq(6).text();
-        var firstHalf = $(elem).contents().get(6).nodeValue.trim().replace(/,.*,/, '').split(',')[0].split('(')[0] +" NYC";
-        var secondHalf = $(elem).contents().get(8).nodeValue.trim().slice(-6);
-        addressData.push(firstHalf+secondHalf);
-        buildingData.push(building)
-    }
-});
+// $("td").each(function(i, elem){
+//     if($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px"){
+//         var building = $(elem).children().first().text();
+//         var group = $(elem).eq(6).text();
+//         var firstHalf = $(elem).contents().get(6).nodeValue.trim().replace(/,.*,/, '').split(',')[0].split('(')[0] +" NYC";
+//         var secondHalf = $(elem).contents().get(8).nodeValue.trim().slice(-6);
+//         addressData.push(firstHalf+secondHalf);
+//         buildingData.push(building)
+//     }
+// });
 
 
 // $("td").each(function(i, elem){
@@ -47,13 +63,15 @@ $("td").each(function(i, elem){
 var meetingsDataForObject= [];
     // makes all functions within fire synchronously so that meetingsData is concatenated into
     // thisMeeting object with corresponding geolocation information.
-async.eachSeries(addressData, function(value, callback) {
+async.eachSeries(dataFromJSON, function(value, callback) {
     // take each address from meetingsData adds web google api address in front and replaces spaces with periods. Returns each as string
-    var apiRequest = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + value.split(' ').join('+') + '&key=' + apiKey;
+    var apiRequest = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + value.address.split(' ').join('+') + '&key=' + apiKey;
+    
     // create the this meeting object
     var thisMeeting = new Object;
-    // set thisMeeting address part of object to the corresponding item in meetingsData
-    thisMeeting.address = value;
+    // // set thisMeeting address part of object to the corresponding item in meetingsData
+    thisMeeting = value;
+    // thisMeeting.floor = value;
     
     // google api requist
     request(apiRequest, function(err, resp, body) {
@@ -70,13 +88,15 @@ async.eachSeries(addressData, function(value, callback) {
 }, function() {
     
 // I logged array
-console.log(JSON.stringify(meetingsDataForObject));
-// I double checked that meetingsDataForObject is an array
-console.log(Array.isArray(meetingsDataForObject));
+// console.log(JSON.stringify(addressData));
+// // I double checked that meetingsDataForObject is an array
+// console.log(Array.isArray(addressData));
 
 // I printed array to a .txt file
+console.log(meetingsDataForObject);
+
 require('fs').writeFile(
-    './array.JSON',
+    './meetings.JSON',
     JSON.stringify(meetingsDataForObject),
     function (err) {
         if (err) {
@@ -84,11 +104,13 @@ require('fs').writeFile(
         }
     }
 );    
+
+// console.log(addressData);
     
-console.log (dataObj);
+
 });
 
-
+});
 
 
 // NOTES FOR FIGURING OUT THE FINAL SECTION
