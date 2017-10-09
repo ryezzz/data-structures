@@ -16,7 +16,27 @@ var $ = cheerio.load(content, {
 var dataObjArr = [];
 
 
-$("td").each(function(i, elem){
+
+
+
+//TD - Btags - contain the phrase "S From"
+//
+
+
+
+
+
+
+$("tbody").children().find('b:contains("From")').parent().each(function(i, elem){
+
+
+// Time TD
+// console.log($(elem).parent().children().next().text());
+
+//Address TD
+//console.log($(elem).parent().children().next().siblings().text());
+
+
 
     function isEmpty (dataPiece, dataProName){
         //create an isempty function so that I don't have to repeat this on every element
@@ -31,12 +51,14 @@ $("td").each(function(i, elem){
     
     
     
-if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
+// if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
         var dataObj = new Object();
 //TIME/DAY - I can't get this to loop throught ALL times and days
 
 //splits all elements from day/time TD into an array so that I can target them with an index
          var dayTime = $(elem)
+                      .parent()
+                      .children()
                       .next()
                       .text()
                       .split(' From ')
@@ -51,19 +73,29 @@ if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
                       .join()
                       .replace("=", ":")
                       .split(',');
-        
-        
+        console.log(dayTime);
+        // Date.prototype.getHours()
+        // Date.prototype.getMinutes()
                 //This targets the first day/time. I have to target all of them.
-                        var day = dayTime[0];
+
+                            console.log(dayTime);
                         
-                        var startTime = dayTime[1];
-                        var endTime  = dayTime[2];
+                        // var day = dayTime[1].trim();
+                        var day = dayTime[1].trim();
+                        var startTime = dayTime[1].slice(0, 5).trim();
+                        
+                        var startAMPM = dayTime[1].slice(-2);
+                        var endTime  = dayTime[2].slice(0, 5).trim();
+                        var endAMPM  = dayTime[2].slice(-2);
                         var meetingType = dayTime[3];
                         var special = dayTime[4];
                         
+                      
                             isEmpty (day, "day");
                             isEmpty (startTime, "start_time");
+                            isEmpty(startAMPM, "start_time_AMPM");
                             isEmpty (endTime, "end_time");
+                            isEmpty (endAMPM, "end_time_AMPM");
                             isEmpty (meetingType, "meeting_type");
                             isEmpty (special, "special_group");
                             
@@ -72,6 +104,10 @@ if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
                             
         // BUILDING
         var building = $(elem)
+                        .parent()
+                        .children()
+                        .next()
+                        .siblings()
                         .children()
                         .first()
                         .text()
@@ -82,6 +118,10 @@ if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
         
         //GROUP
         var group = $(elem)
+                    .parent()
+                    .children()
+                    .next()
+                    .siblings()
                     .children('b')
                     .text().trim()
                     .split('-')[0]
@@ -94,7 +134,11 @@ if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
 
         // FLOOR
         // Split splits a string in half [1] selects the correct index. Slice deletes space at beginning of text
-        var floor =$(elem)
+        var floor = $(elem)
+                    .parent()
+                    .children()
+                    .next()
+                    .siblings()
                     .contents()
                     .get(6)
                     .nodeValue.trim()
@@ -107,6 +151,10 @@ if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
 
         // GENERAL ADDRESS 
         var firstHalf = $(elem)
+                        .parent()
+                        .children()
+                        .next()
+                        .siblings()
                         .contents()
                         .get(6)
                         .nodeValue.trim()
@@ -117,6 +165,10 @@ if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
         
         
         var secondHalf = $(elem)
+                        .parent()
+                        .children()
+                        .next()
+                        .siblings()
                         .contents()
                         .get(8)
                         .nodeValue.trim()
@@ -128,7 +180,12 @@ if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
               
         // DETAILS BOX
               
-        var details = $(elem).children('div')
+        var details = $(elem)
+                        .parent()
+                        .children()
+                        .next()
+                        .siblings()
+                        .children('div')
                         .text()
                         .slice(1)
                         .slice(0, -1)
@@ -139,6 +196,10 @@ if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
         // ACCESS
         
         var access = $(elem)
+                     .parent()
+                     .children()
+                     .next()
+                     .siblings()
                     .children()
                     .last()
                     .text()
@@ -156,11 +217,11 @@ if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
         dataObjArr.push(dataObj);
     // //content of object
     // console.log (dataObjArr);
-    }
+    // }
 
 
 });
-
+console.log(dataObjArr.length)
 console.log(dataObjArr)
 
 require('fs').writeFile(
