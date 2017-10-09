@@ -81,7 +81,7 @@ $("tbody").children().find('b:contains("From")').parent().each(function(i, elem)
                             console.log(dayTime);
                         
                         // var day = dayTime[1].trim();
-                        var day = dayTime[1].trim();
+                        var day = dayTime[0].trim();
                         var startTime = dayTime[1].slice(0, 5).trim();
                         
                         var startAMPM = dayTime[1].slice(-2);
