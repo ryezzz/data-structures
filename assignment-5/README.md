@@ -1,4 +1,6 @@
-This isn't finished yet. I'm hoping to include all times by Monday at 4pm, but if not, I've completed the other steps of my aggregation. 
+This project loads and queries all of my address data as well as the first time associated with each address. My plan was to create a new object for each start time in the text, but I wasn't able to separate the times into individual objects, unfortunately.
+
+
 <br>
 <br>
 My final aggregation file of partial meetings is: https://github.com/ryezzz/data-structures/blob/master/assignment-5/mongo_aggregation_result.JSON 
