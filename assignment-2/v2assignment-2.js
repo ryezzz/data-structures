@@ -42,9 +42,9 @@ $("tbody").children().find('b:contains("From")').parent().each(function(i, elem)
         //create an isempty function so that I don't have to repeat this on every element
         if (dataPiece) {
             //put string within dataObject
-            dataObj[dataProName] = dataPiece; 
+            newDataObj[dataProName] = dataPiece; 
         } else {
-            dataObj[dataProName] = "No " + [dataProName] + " listed";
+            newDataObj[dataProName] = "No " + [dataProName] + " listed";
         }
     
     }
@@ -54,56 +54,52 @@ $("tbody").children().find('b:contains("From")').parent().each(function(i, elem)
 // if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
         var dataObj = new Object();
 //TIME/DAY - I can't get this to loop throught ALL times and days
-
+        //  var dayTime = $(elem)
+        //               .parent()
+        //               .find('td')
+        //               .eq(1)
+        //               .html()
+        //               .split('<br>')
+        //               .next()
+        //               .text()
+        //               .split(' From ')
+        //               .join()
+        //               .split(' to ')
+        //               .join()
+        //               .split(' Meeting Type ')
+        //               .join()
+        //               .split("   ")
+        //               .join()
+        //               .split(' Special Interest ')
+        //               .join()
+        //               .replace("=", ":")
+        //               .split(',');
+        // console.log(dayTime);
 //splits all elements from day/time TD into an array so that I can target them with an index
          var dayTime = $(elem)
                       .parent()
-                      .children()
-                      .next()
-                      .text()
-                      .split(' From ')
-                      .join()
-                      .split(' to ')
-                      .join()
-                      .split(' Meeting Type ')
-                      .join()
-                      .split("   ")
-                      .join()
-                      .split(' Special Interest ')
-                      .join()
-                      .replace("=", ":")
-                      .split(',');
-        console.log(dayTime);
-        // Date.prototype.getHours()
-        // Date.prototype.getMinutes()
-                //This targets the first day/time. I have to target all of them.
-
-                            console.log(dayTime);
-                        
-                        // var day = dayTime[1].trim();
-                        var day = dayTime[0].trim();
-                        var startTime = dayTime[1].slice(0, 5).trim();
-                        
-                        var startAMPM = dayTime[1].slice(-2);
-                        var endTime  = dayTime[2].slice(0, 5).trim();
-                        var endAMPM  = dayTime[2].slice(-2);
-                        var meetingType = dayTime[3];
-                        var special = dayTime[4];
-                        
+                      .find('td')
+                      .eq(1)
+                      .html()
+                      .split('<br>');
                       
-                            isEmpty (day, "day");
-                            isEmpty (startTime, "start_time");
-                            isEmpty(startAMPM, "start_time_AMPM");
-                            isEmpty (endTime, "end_time");
-                            isEmpty (endAMPM, "end_time_AMPM");
-                            isEmpty (meetingType, "meeting_type");
-                            isEmpty (special, "special_group");
-                            
-
-                        
-                            
-        // BUILDING
-        var building = $(elem)
+                    //   console.log(dayTime)
+                      
+        for(var i = 0; i<dayTime.length; i++){
+            if(dayTime[i].match(/ From/g) !== null){
+                var time = dayTime[i].match(/\d.+/gi);
+                var day = dayTime[i].match(/Mondays|Tuesdays|Wednesdays|Thursdays|Fridays|Saturdays|Sundays/gi);
+                var startTime = time.toString().slice("to</b>")[1].slice("<br/><b>")[1];
+                var endTime = time.toString().slice(0, 8).trim();
+                var newDataObj = new Object();
+ 
+                isEmpty(endTime, "endTime")
+                isEmpty(startTime, "StartTime")
+                isEmpty(day, "day");
+                isEmpty(time,"Time");
+                
+                
+                var building = $(elem)
                         .parent()
                         .children()
                         .next()
@@ -113,11 +109,10 @@ $("tbody").children().find('b:contains("From")').parent().each(function(i, elem)
                         .text()
                         .split(/['$]/)
                         .join("");
-        isEmpty(building,"building");
-        
-        
-        //GROUP
-        var group = $(elem)
+                        isEmpty(building,"building");
+                        
+                        
+                var group = $(elem)
                     .parent()
                     .children()
                     .next()
@@ -129,12 +124,11 @@ $("tbody").children().find('b:contains("From")').parent().each(function(i, elem)
                     .toLowerCase()
                     .replace(':ii', ':II');
                     
-        isEmpty(group, "group");
-
-
-        // FLOOR
-        // Split splits a string in half [1] selects the correct index. Slice deletes space at beginning of text
-        var floor = $(elem)
+                    isEmpty(group, "group");
+                    
+                    
+                    
+                var floor = $(elem)
                     .parent()
                     .children()
                     .next()
@@ -145,12 +139,11 @@ $("tbody").children().find('b:contains("From")').parent().each(function(i, elem)
                     .split(',')[1]
                     .slice(1);
 
-        isEmpty(floor, "floor");
-            
-
-
-        // GENERAL ADDRESS 
-        var firstHalf = $(elem)
+                    isEmpty(floor, "floor");
+                    
+                    
+                 // GENERAL ADDRESS 
+                 var firstHalf = $(elem)
                         .parent()
                         .children()
                         .next()
@@ -161,10 +154,9 @@ $("tbody").children().find('b:contains("From")').parent().each(function(i, elem)
                         .replace(/,.*,/, '')
                         .split(',')[0]
                         .split('(')[0] +" NYC";
-        
-        
-        
-        var secondHalf = $(elem)
+                        
+                        
+                  var secondHalf = $(elem)
                         .parent()
                         .children()
                         .next()
@@ -174,55 +166,93 @@ $("tbody").children().find('b:contains("From")').parent().each(function(i, elem)
                         .nodeValue.trim()
                         .slice(-6);
         
-        isEmpty(firstHalf+secondHalf, "address");
+                 isEmpty(firstHalf+secondHalf, "address");
        
        
               
-        // DETAILS BOX
-              
-        var details = $(elem)
-                        .parent()
-                        .children()
-                        .next()
-                        .siblings()
-                        .children('div')
-                        .text()
-                        .slice(1)
-                        .slice(0, -1)
-                        .replace("*", "");   
-       
-        isEmpty(details, "details");
+                // DETAILS BOX
+                      
+                var details = $(elem)
+                                .parent()
+                                .children()
+                                .next()
+                                .siblings()
+                                .children('div')
+                                .text()
+                                .slice(1)
+                                .slice(0, -1)
+                                .replace("*", "");   
                
-        // ACCESS
+                isEmpty(details, "details");
+               
+                // ACCESS
+                
+                var access = $(elem)
+                             .parent()
+                             .children()
+                             .next()
+                             .siblings()
+                            .children()
+                            .last()
+                            .text()
+                            .slice(1)
+                            .slice(0, -1);
+                            
+                
+                if (access.length!=17) {
+                    newDataObj.access = ("no");
+                } else {
+                    newDataObj.access = ("yes");
+                }
         
-        var access = $(elem)
-                     .parent()
-                     .children()
-                     .next()
-                     .siblings()
-                    .children()
-                    .last()
-                    .text()
-                    .slice(1)
-                    .slice(0, -1);
-                    
-        
-        if (access.length!=17) {
-            dataObj.access = ("no");
-        } else {
-            dataObj.access = ("yes");
-        };
+                 dataObjArr.push(newDataObj);
+                      ///end of for loop                 
+                    }
+            
+    
+            
+console.log(newDataObj)
+        }
+                      
+
+        // Date.prototype.getHours()
+        // Date.prototype.getMinutes()
+                //This targets the first day/time. I have to target all of them.
+
+                        //     console.log(dayTime);
+                        
+                        // // var day = dayTime[1].trim();
+                        // var day = dayTime[0].trim();
+                        // var startTime = dayTime[1].slice(0, 5).trim();
+                        
+                        // var startAMPM = dayTime[1].slice(-2);
+                        // var endTime  = dayTime[2].slice(0, 5).trim();
+                        // var endAMPM  = dayTime[2].slice(-2);
+                        // var meetingType = dayTime[3];
+                        // var special = dayTime[4];
+                        
+                      
+                        //     isEmpty (day, "day");
+                        //     isEmpty (startTime, "start_time");
+                        //     isEmpty(startAMPM, "start_time_AMPM");
+                        //     isEmpty (endTime, "end_time");
+                        //     isEmpty (endAMPM, "end_time_AMPM");
+                        //     isEmpty (meetingType, "meeting_type");
+                        //     isEmpty (special, "special_group");
+                        
+      
         
  
-        dataObjArr.push(dataObj);
-    // //content of object
+        
+    //     console.log(dataObj.length)
+    // // //content of object
     // console.log (dataObjArr);
     // }
 
 
 });
-console.log(dataObjArr.length)
-console.log(dataObjArr)
+
+// console.log(dataObjArr)
 
 require('fs').writeFile(
     './array.JSON',

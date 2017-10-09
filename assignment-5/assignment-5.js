@@ -1,35 +1,49 @@
+var fs = require('fs');
 
-// npm install mongodb
+var dbName = 'assignment-5';
+var collName = 'all_meeting_data';
 
-var request = require('request');
+// Connection URL
+var url = 'mongodb://' + process.env.IP + ':27017/' + dbName;
 
 
-var dbName = 'assignment-5'; // name of Mongo database (created in the Mongo shell)
-var collName = 'all_meeting_data'; // name of Mongo collection (created in the Mongo shell)
+var myQuery = [
+    { $match : { day : "Tuesdays" } },
+    { $match : { $or: [{ start_time : "7:00"}, { start_time : "7:30"}, { start_time : "8:00"}, { start_time : "11:00"}, { start_time : "12:00"}] } }, 
+    { $match : { start_time_AMPM: "PM" } },
+    
+    
+   
+    
+    
+    // db.restaurants.find( { "grades.score": { $gt: 30 } } )
 
-// Request the JSON data 
-// Insert the list of address data (contained in an array) in the Mongo collection
-request('https://raw.githubusercontent.com/ryezzz/data-structures/master/assignment-3/meetings.JSON', function(error, response, body) {
-    var aaData = JSON.parse(body);
+    ];
 
-    // Connection URL
-    var url = 'mongodb://' + process.env.IP + ':27017/' + dbName;
 
-    // Retrieve
-    var MongoClient = require('mongodb').MongoClient; 
+// db.restaurants.find(
+//   { $or: [ { "cuisine": "Italian" }, { "address.zipcode": "10075" } ] }
+// )
 
-    MongoClient.connect(url, function(err, db) {
-        if (err) {return console.dir(err);}
+// Retrieve
+var MongoClient = require('mongodb').MongoClient;
 
-        var collection = db.collection(collName);
-        // THIS IS WHERE THE DOCUMENT(S) IS/ARE INSERTED TO MONGO:
-        collection.insert(aaData);
+MongoClient.connect(url, function(err, db) {
+    if (err) {return console.dir(err);}
+
+    var collection = db.collection(collName);
+
+    // Select three Citibike stations
+    collection.aggregate(myQuery).toArray(function(err, docs) {
+        if (err) {console.log(err)}
+        
+        else {
+            console.log("Writing", docs.length, "documents as a result of this aggregation.");
+            fs.writeFileSync('mongo_aggregation_result.JSON', JSON.stringify(docs, null, 4));
+        }
+        
         db.close();
+        
+    });
 
-    }); //MongoClient.connect
-
-}); //request
-
-// Database was goine
-// Make sure data is there before pulling
-// if firstcell.text!=" "
+}); //MongoClient.connect
