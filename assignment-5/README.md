@@ -1,7 +1,7 @@
-This isn't finished yet. I'm hoping to include all times by Monday at 4pm, but if not, I've completed the other steps of my aggrigation. 
+This isn't finished yet. I'm hoping to include all times by Monday at 4pm, but if not, I've completed the other steps of my aggregation. 
 <br>
 <br>
-My final aggrigation file of partial meetings is: https://github.com/ryezzz/data-structures/blob/master/assignment-5/mongo_aggregation_result.JSON 
+My final aggregation file of partial meetings is: https://github.com/ryezzz/data-structures/blob/master/assignment-5/mongo_aggregation_result.JSON 
 <br>
 <br>
 My parsing code is at:
