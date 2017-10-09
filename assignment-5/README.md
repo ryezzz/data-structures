@@ -3,7 +3,7 @@ This project loads and queries all of my address data as well as the first time 
 
 <br>
 <br>
-My final aggregation file of partial meetings is: https://github.com/ryezzz/data-structures/blob/master/assignment-5/mongo_aggregation_result.JSON 
+My final query aggregation file of partial times is: https://github.com/ryezzz/data-structures/blob/master/assignment-5/mongo_aggregation_result.JSON 
 <br>
 <br>
 My parsing code for the above result is at:
