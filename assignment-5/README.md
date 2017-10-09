@@ -10,7 +10,7 @@ My parsing code for the above result is at:
 https://github.com/ryezzz/data-structures/blob/master/assignment-5/v2assignment-2.js
 <br>
 <br>
-My my in-progressing parsing file is here:
+My my in-progress parsing code is here:
 https://github.com/ryezzz/data-structures/blob/master/assignment-2/v2assignment-2.js
 <br>
 <br>
