@@ -27,9 +27,16 @@ var dataObjArr = [];
 
 
 
-$("tbody").children().find('b:contains("From")').parent().each(function(i, elem){
+$("tbody").children().find('b:contains("From")').each(function(i, elem){
+var dataObj = new Object();
+var day = $(elem).text()
+// console.log ($(elem).parent().html().split('<br>'));
+var timeParse = $(elem).parent().text();
+// .split('<b>to</b> ').pop().split(' <br/><b>').shift(
+var time = timeParse.slice(0, -1);
+dataObj.time = time;
 
-
+console.log(dataObj);
 // Time TD
 // console.log($(elem).parent().children().next().text());
 
@@ -52,7 +59,7 @@ $("tbody").children().find('b:contains("From")').parent().each(function(i, elem)
     
     
 // if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
-        var dataObj = new Object();
+        
 //TIME/DAY - I can't get this to loop throught ALL times and days
         //  var dayTime = $(elem)
         //               .parent()
@@ -76,143 +83,165 @@ $("tbody").children().find('b:contains("From")').parent().each(function(i, elem)
         //               .split(',');
         // console.log(dayTime);
 //splits all elements from day/time TD into an array so that I can target them with an index
-         var dayTime = $(elem)
-                      .parent()
-                      .find('td')
-                      .eq(1)
-                      .html()
-                      .split('<br>');
+        //  var dayTime = $(elem)
+        //             //   .parent()
+        //             //   .find('td')
+        //             //   .eq(1)
+        //               .html()
+        //               .split('<br>');
                       
-                    //   console.log(dayTime)
+        //             //   console.log(dayTime)
                       
-        for(var i = 0; i<dayTime.length; i++){
-            if(dayTime[i].match(/ From/g) !== null){
-                var time = dayTime[i].match(/\d.+/gi);
-                var day = dayTime[i].match(/Mondays|Tuesdays|Wednesdays|Thursdays|Fridays|Saturdays|Sundays/gi);
-                var startTime = time.toString().slice("to</b>")[1].slice("<br/><b>")[1];
-                var endTime = time.toString().slice(0, 8).trim();
-                var newDataObj = new Object();
- 
-                isEmpty(endTime, "endTime")
-                isEmpty(startTime, "StartTime")
-                isEmpty(day, "day");
-                isEmpty(time,"Time");
+        // // for(var i = 0; i<26; i++){
+        //     console.log(dayTime);
+        //     if(dayTime[i].match(/ From/g) !== null){
+        //         var time = dayTime[i].match(/\d.+/gi);
+        //         // var day = dayTime[i].toString().match(/Mondays|Tuesdays|Wednesdays|Thursdays|Fridays|Saturdays|Sundays/gi);
+        //         var startTime = time.toString().slice(0, 8);
+                
+        //         dataObj.time = startTime;
+                
+                console.log(dataObj)
+                
+            //       for(var i = 0; i<26; i++){
+            // console.log(dayTime);
+            // if(dayTime[i].match(/ From/g) !== null){
+            //     var time = dayTime[i].match(/\d.+/gi);
+            //     var day = dayTime[i].toString().match(/Mondays|Tuesdays|Wednesdays|Thursdays|Fridays|Saturdays|Sundays/gi);
+            //     var startTime = time.toString().slice(0, 8);
+                
+            //     dataObj.time = startTime;
+                
+            //     console.log(dataObj)
+                
+                // //between two expressions
+                // var endTime = time.toString().split('<b>to</b> ').pop().split(' <br/><b>').shift().split(' ')[0];
+                
+                // var endTimeAMPM = time[i].toString().split('<b>to</b> ').pop().split(' <br/><b>').shift().split(" ").pop().split(' M').toString();
+                // //.split(':').pop().split(';').shift();
+                // var newDataObj = new Object();
+                
+                // isEmpty(startTime, "StartTime")
+                // isEmpty(endTime, "endTime")
+                // isEmpty(endTimeAMPM, "endTimeAMPM")
+                // isEmpty(day, "day");
+                // isEmpty(time,"Time");
                 
                 
-                var building = $(elem)
-                        .parent()
-                        .children()
-                        .next()
-                        .siblings()
-                        .children()
-                        .first()
-                        .text()
-                        .split(/['$]/)
-                        .join("");
-                        isEmpty(building,"building");
+                // var building = $(elem)
+                //         .parent()
+                //         .children()
+                //         .next()
+                //         .siblings()
+                //         .children()
+                //         .first()
+                //         .text()
+                //         .split(/['$]/)
+                //         .join("");
+                //         isEmpty(building,"building");
                         
                         
-                var group = $(elem)
-                    .parent()
-                    .children()
-                    .next()
-                    .siblings()
-                    .children('b')
-                    .text().trim()
-                    .split('-')[0]
-                    .slice(0, -1)
-                    .toLowerCase()
-                    .replace(':ii', ':II');
+                // var group = $(elem)
+                //     .parent()
+                //     .children()
+                //     .next()
+                //     .siblings()
+                //     .children('b')
+                //     .text().trim()
+                //     .split('-')[0]
+                //     .slice(0, -1)
+                //     .toLowerCase()
+                //     .replace(':ii', ':II');
                     
-                    isEmpty(group, "group");
+                //     isEmpty(group, "group");
                     
                     
                     
-                var floor = $(elem)
-                    .parent()
-                    .children()
-                    .next()
-                    .siblings()
-                    .contents()
-                    .get(6)
-                    .nodeValue.trim()
-                    .split(',')[1]
-                    .slice(1);
+                // var floor = $(elem)
+                //     .parent()
+                //     .children()
+                //     .next()
+                //     .siblings()
+                //     .contents()
+                //     .get(6)
+                //     .nodeValue.trim()
+                //     .split(',')[1]
+                //     .slice(1);
 
-                    isEmpty(floor, "floor");
+                //     isEmpty(floor, "floor");
                     
                     
-                 // GENERAL ADDRESS 
-                 var firstHalf = $(elem)
-                        .parent()
-                        .children()
-                        .next()
-                        .siblings()
-                        .contents()
-                        .get(6)
-                        .nodeValue.trim()
-                        .replace(/,.*,/, '')
-                        .split(',')[0]
-                        .split('(')[0] +" NYC";
+                //  // GENERAL ADDRESS 
+                //  var firstHalf = $(elem)
+                //         .parent()
+                //         .children()
+                //         .next()
+                //         .siblings()
+                //         .contents()
+                //         .get(6)
+                //         .nodeValue.trim()
+                //         .replace(/,.*,/, '')
+                //         .split(',')[0]
+                //         .split('(')[0] +" NYC";
                         
                         
-                  var secondHalf = $(elem)
-                        .parent()
-                        .children()
-                        .next()
-                        .siblings()
-                        .contents()
-                        .get(8)
-                        .nodeValue.trim()
-                        .slice(-6);
+                //   var secondHalf = $(elem)
+                //         .parent()
+                //         .children()
+                //         .next()
+                //         .siblings()
+                //         .contents()
+                //         .get(8)
+                //         .nodeValue.trim()
+                //         .slice(-6);
         
-                 isEmpty(firstHalf+secondHalf, "address");
+                //  isEmpty(firstHalf+secondHalf, "address");
        
        
               
-                // DETAILS BOX
+                // // DETAILS BOX
                       
-                var details = $(elem)
-                                .parent()
-                                .children()
-                                .next()
-                                .siblings()
-                                .children('div')
-                                .text()
-                                .slice(1)
-                                .slice(0, -1)
-                                .replace("*", "");   
+                // var details = $(elem)
+                //                 .parent()
+                //                 .children()
+                //                 .next()
+                //                 .siblings()
+                //                 .children('div')
+                //                 .text()
+                //                 .slice(1)
+                //                 .slice(0, -1)
+                //                 .replace("*", "");   
                
-                isEmpty(details, "details");
+                // isEmpty(details, "details");
                
-                // ACCESS
+                // // ACCESS
                 
-                var access = $(elem)
-                             .parent()
-                             .children()
-                             .next()
-                             .siblings()
-                            .children()
-                            .last()
-                            .text()
-                            .slice(1)
-                            .slice(0, -1);
+                // var access = $(elem)
+                //              .parent()
+                //              .children()
+                //              .next()
+                //              .siblings()
+                //             .children()
+                //             .last()
+                //             .text()
+                //             .slice(1)
+                //             .slice(0, -1);
                             
                 
-                if (access.length!=17) {
-                    newDataObj.access = ("no");
-                } else {
-                    newDataObj.access = ("yes");
-                }
-        
-                 dataObjArr.push(newDataObj);
-                      ///end of for loop                 
-                    }
+                // if (access.length!=17) {
+                //     newDataObj.access = ("no");
+                // } else {
+                //     newDataObj.access = ("yes");
+                // }
+
+                //  dataObjArr.push(newDataObj);
+                //       ///end of for loop                 
+                    // }
             
     
             
-console.log(newDataObj)
-        }
+
+        
                       
 
         // Date.prototype.getHours()
