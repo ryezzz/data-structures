@@ -21,22 +21,91 @@ var dataObjArr = [];
 
 //TD - Btags - contain the phrase "S From"
 //
+// Turns each day into a segmented object
+$("tbody").find('b:contains("From")').each(function(i, elem){
+    var obj = new  Object();
+        var day = $(elem).html();
+        obj.day = day;
+    
+                             // GENERAL ADDRESS 
+                     console.log ($(elem)
+                            .parent()
+                            .text())
+                            
+                            // .contents()
+                            // .get(6)
+                            // .nodeValue
+                            // .trim())
+                    //         .replace(/,.*,/, '')
+                    //         .split(',')[0]
+                    //         .split('(')[0] +" NYC";
+                            
+                            
+                    //   var secondHalf = $(elem)
+                    //         .parent()
+                    //         .children()
+                    //         .next()
+                    //         .siblings()
+                    //         .contents()
+                    //         .get(8)
+                    //         .nodeValue
+                    //         .trim()
+                    //         .slice(-6);
+            
+                    //  obj.address = (firstHalf+secondHalf, "address");
+                     
+                     
+        console.log (obj);
+    
+    
+//This returns all days removed from []
+// $("tbody").find('b:contains("From")').each(function(i, elem){
+    // var obj = new  Object();
+    //     var day = $(elem).html();
+    //     obj.day = day;
+    // console.log (obj);
+    
+
+
+
+//This returns individual objects of all the days
+// $("tbody").find('b:contains("From")').each(function(i, elem){
+    
+//     var obj = new  Object();
+//         var day = $(elem).text().split('   ');
+//         obj.day = day;
+//     console.log (obj);
+
+// Turns each day into a segmented object
+// $("tbody").find('b:contains("From")').parent().each(function(i, elem){
+    
+//     var dayTimesArray = $(elem).text().split('   ');
+    
+//     var obj = dayTimesArray.reduce(function(acc, cur, i) {
+//   acc[i] = cur;
+//   return acc;
+// }, {});
 
 
 
 
 
 
-$("tbody").children().find('b:contains("From")').each(function(i, elem){
-var dataObj = new Object();
-var day = $(elem).text()
-// console.log ($(elem).parent().html().split('<br>'));
-var timeParse = $(elem).parent().text();
-// .split('<b>to</b> ').pop().split(' <br/><b>').shift(
-var time = timeParse.slice(0, -1);
-dataObj.time = time;
+// console.log (obj);
+    
+// var dataObj = new Object();
+// var day = $(elem).text();
+// // console.log ($(elem).parent().html().split('<br>'));
+// var timeParse = $(elem).html();
+// // .split('<b>to</b> ').pop().split(' <br/><b>').shift(
+// var day = $(elem).parent().html().split(" <br/> <b>");
+// dataObj.day = day;
 
-console.log(dataObj);
+// for (var i=0; i<100; i++){
+//     if(dataObj[j]){
+// console.log(dataObj[i]);
+// }
+// }
 // Time TD
 // console.log($(elem).parent().children().next().text());
 
@@ -101,7 +170,7 @@ console.log(dataObj);
                 
         //         dataObj.time = startTime;
                 
-                console.log(dataObj)
+                // console.log(dataObj)
                 
             //       for(var i = 0; i<26; i++){
             // console.log(dayTime);

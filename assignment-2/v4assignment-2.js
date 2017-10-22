@@ -1,32 +1,3 @@
-// v2assignment-2.js
-// DETAILS
-// ACTIVITY
-// v2assignment-2.js
-// Sharing Info
-
-// J
-// General Info
-// Type
-// Javascript
-// Size
-// 5 KB (5,565 bytes)
-// Storage used
-// 5 KB (5,565 bytes)
-// Location
-// ryes_files
-// Owner
-// me
-// Modified
-// 6:20 PM by me
-// Opened
-// 12:34 AM by me
-// Created
-// 6:21 PM
-// Description
-// Add a description
-// Download permissions
-// Viewers can download
-
 var fs = require('fs');
 var request = require('request'); // npm install request
 var cheerio = require('cheerio');
@@ -49,14 +20,14 @@ var dataObjArr = [];
 //I'm trying to target all time elements and got the idea from Julian to target b:contains. I haven't used it successfully to loop
 //through all times, though.
 
-$("tbody").children().find('b:contains("From")').parent().each(function(i, elem){
-// console.log($(elem).parent().next().text());
+$("tbody").children().find('b:contains("From")').each(function(i, elem){
+    console.log('item ' + i +': ' + $(elem).text());
     
     
     
     
-  //create an isempty function so that I don't have to repeat this on every element
-  //This also returns a readible "unavailible"
+   //create an isempty function so that I don't have to repeat this on every element
+   //This also returns a readible "unavailible"
     function isEmpty (dataPiece, dataProName){
         
         if (dataPiece) {
@@ -70,7 +41,9 @@ $("tbody").children().find('b:contains("From")').parent().each(function(i, elem)
     
     
     
-    // if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
+    if ($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px" ){
+        
+        console.log($(elem).text())
             var dataObj = new Object();
 //TIME/DAY - I can't get this to loop throught ALL times and days
 
@@ -92,6 +65,8 @@ $("tbody").children().find('b:contains("From")').parent().each(function(i, elem)
                           .join()
                           .replace("=", ":")
                           .split(',');
+                          
+                          console.log(dayTime);
 
                         
                         //This targets the first day/time. I have to target all of them.
@@ -128,7 +103,7 @@ $("tbody").children().find('b:contains("From")').parent().each(function(i, elem)
                         
                         //GROUP
                         var group = $(elem)
-                                    // .children('b')
+                                    .children('b')
                                     .text().trim()
                                     .split('-')[0]
                                     .slice(0, -1)
@@ -141,72 +116,70 @@ $("tbody").children().find('b:contains("From")').parent().each(function(i, elem)
                         // FLOOR
                         // Split splits a string in half [1] selects the correct index. Slice deletes space at beginning of text
                         var floor =$(elem)
-                                    .parent()
                                     .contents()
                                     .get(6)
                                     .nodeValue.trim()
-                                    .split(',')[1];
-                                    // .slice(1);
+                                    .split(',')[1]
+                                    .slice(1);
                 
                         isEmpty(floor, "floor");
                             
                 
                 
                         // GENERAL ADDRESS 
-                        // var firstHalf = $(elem).parent()
-                        //                 .contents()
-                        //                 .get(6)
-                        //                 .nodeValue.trim()
-                        //                 .replace(/,.*,/, '')
-                        //                 .split(',')[0]
-                        //                 .split('(')[0] +" NYC";
+                        var firstHalf = $(elem)
+                                        .contents()
+                                        .get(6)
+                                        .nodeValue.trim()
+                                        .replace(/,.*,/, '')
+                                        .split(',')[0]
+                                        .split('(')[0] +" NYC";
                         
                         
                         
-                        // var secondHalf = $(elem)
-                        //                 .parent()
-                        //                 .contents()
-                        //                 .get(8)
-                        //                 .nodeValue.trim()
-                        //                 .slice(-6);
+                        var secondHalf = $(elem)
+                                        .contents()
+                                        .get(8)
+                                        .nodeValue.trim()
+                                        .slice(-6);
                         
-                        // isEmpty(firstHalf+secondHalf, "address");
+                        isEmpty(firstHalf+secondHalf, "address");
                        
                        
                               
-                        // // DETAILS BOX
-                        // var details = $(elem).children('div')
-                        //                 .text()
-                        //                 .slice(1)
-                        //                 .slice(0, -1)
-                        //                 .replace("*", "");   
+                        // DETAILS BOX
+                        var details = $(elem).children('div')
+                                        .text()
+                                        .slice(1)
+                                        .slice(0, -1)
+                                        .replace("*", "");   
                        
-                        // isEmpty(details, "details");
+                        isEmpty(details, "details");
                                
-                        // // ACCESS
-                        // var access = $(elem)
-                        //             .children()
-                        //             .last()
-                        //             .text()
-                        //             .slice(1)
-                        //             .slice(0, -1);
+                        // ACCESS
+                        var access = $(elem)
+                                    .children()
+                                    .last()
+                                    .text()
+                                    .slice(1)
+                                    .slice(0, -1);
                                     
-                        // //tests for length
-                        // if (access.length!=17) {
-                        //     dataObj.access = ("no");
-                        // } else {
-                        //     dataObj.access = ("yes");
-                        // };
+                        //tests for length
+                        if (access.length!=17) {
+                            dataObj.access = ("no");
+                        } else {
+                            dataObj.access = ("yes");
+                        };
                         
                         //push everything to data array so that I can then export to JSON
                         dataObjArr.push(dataObj);
 
-                    // }
+                    }
                 
-                
+               
                 });
 
-console.log(dataObjArr)
+ console.log(dataObjArr)
 
 require('fs').writeFile(
     './array.JSON',
@@ -217,12 +190,3 @@ require('fs').writeFile(
         }
     }
 ); 
-
-
-  
-
-
-
-
-
-     

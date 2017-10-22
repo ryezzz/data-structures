@@ -1,1 +1,612 @@
-[]
+[
+ {
+  "eventname": "item 0",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Fridays ,</b> 6:00 PM <b>to</b> 7:00 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 1",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Thursdays ,</b> 6:15 PM <b>to</b> 7:15 PM <br/><b>Meeting Type</b> S = Step meeting <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 2",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Saturdays ,</b> 12:00 PM <b>to</b> 1:00 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 3",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Sundays ,</b> 6:30 PM <b>to</b> 7:45 PM <br/><b>Meeting Type</b> B = Beginners meeting <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 4",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Sundays ,</b> 10:30 AM <b>to</b> 12:00 PM <br/><b>Meeting Type</b> OD = Open Discussion meeting <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 5",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Mondays ,</b> 5:15 PM <b>to</b> 6:15 PM <br/><b>Meeting Type</b> OD = Open Discussion meeting <br/><b>Special Interest</b> Meditation at Meeting <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 6",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Fridays ,</b> 6:45 PM <b>to</b> 8:00 PM <br/><b>Meeting Type</b> OD = Open Discussion meeting <br/><b>Special Interest</b> Agnostic <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 7",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Mondays ,</b> 7:15 PM <b>to</b> 8:15 PM <br/><b>Meeting Type</b> B = Beginners meeting"
+   },
+   {
+    "day": "Tuesdays ,</b> 7:15 PM <b>to</b> 8:15 PM <br/><b>Meeting Type</b> BB = Big Book meeting"
+   },
+   {
+    "day": "Wednesdays ,</b> 7:15 PM <b>to</b> 8:15 PM <br/><b>Meeting Type</b> OD = Open Discussion meeting"
+   },
+   {
+    "day": "Fridays ,</b> 8:00 PM <b>to</b> 9:00 PM <br/><b>Meeting Type</b> S = Step meeting"
+   },
+   {
+    "day": "Mondays ,</b> 8:30 PM <b>to</b> 9:30 PM <br/><b>Meeting Type</b> S = Step meeting <br/><b>Special Interest</b> Steps 1-2-3 <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 8",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Sundays ,</b> 3:00 PM <b>to</b> 4:00 PM <br/><b>Meeting Type</b> O = Open meeting"
+   },
+   {
+    "day": "Tuesdays ,</b> 7:30 PM <b>to</b> 8:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Fridays ,</b> 8:00 PM <b>to</b> 9:00 PM <br/><b>Meeting Type</b> O = Open meeting <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 9",
+  "meetingTimesArray": [
+   {
+    "day": " <b>s ,</b> 12:00 AM <b>to</b> 12:00 AM"
+   },
+   {
+    "day": "Mondays ,</b> 7:00 PM <b>to</b> 8:00 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting <br/><b>Special Interest</b> Gay Men <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 10",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Tuesdays ,</b> 7:00 PM <b>to</b> 8:00 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 11",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Mondays ,</b> 12:00 AM <b>to</b> 1:15 AM <br/><b>Meeting Type</b> S = Step meeting"
+   },
+   {
+    "day": "Sundays ,</b> 12:00 AM <b>to</b> 1:15 AM <br/><b>Meeting Type</b> S = Step meeting"
+   },
+   {
+    "day": "Wednesdays ,</b> 12:00 AM <b>to</b> 1:15 AM <br/><b>Meeting Type</b> B = Beginners meeting"
+   },
+   {
+    "day": "Saturdays ,</b> 12:00 AM <b>to</b> 1:15 AM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Tuesdays ,</b> 12:00 AM <b>to</b> 1:15 AM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Fridays ,</b> 12:00 AM <b>to</b> 1:15 AM <br/><b>Meeting Type</b> C = Closed Discussion meeting <br/><b>Special Interest</b> Promises"
+   },
+   {
+    "day": "Thursdays ,</b> 12:00 AM <b>to</b> 1:15 AM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Saturdays ,</b> 2:00 AM <b>to</b> 3:15 AM <br/><b>Meeting Type</b> OD = Open Discussion meeting"
+   },
+   {
+    "day": "Tuesdays ,</b> 2:00 AM <b>to</b> 3:15 AM <br/><b>Meeting Type</b> OD = Open Discussion meeting"
+   },
+   {
+    "day": "Fridays ,</b> 2:00 AM <b>to</b> 3:15 AM <br/><b>Meeting Type</b> OD = Open Discussion meeting"
+   },
+   {
+    "day": "Mondays ,</b> 2:00 AM <b>to</b> 3:15 AM <br/><b>Meeting Type</b> OD = Open Discussion meeting"
+   },
+   {
+    "day": "Thursdays ,</b> 2:00 AM <b>to</b> 3:15 AM <br/><b>Meeting Type</b> OD = Open Discussion meeting"
+   },
+   {
+    "day": "Sundays ,</b> 2:00 AM <b>to</b> 3:15 AM <br/><b>Meeting Type</b> OD = Open Discussion meeting"
+   },
+   {
+    "day": "Wednesdays ,</b> 2:00 AM <b>to</b> 3:15 AM <br/><b>Meeting Type</b> OD = Open Discussion meeting"
+   },
+   {
+    "day": "Saturdays ,</b> 12:30 PM <b>to</b> 1:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Tuesdays ,</b> 12:30 PM <b>to</b> 1:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Mondays ,</b> 12:30 PM <b>to</b> 1:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Thursdays ,</b> 12:30 PM <b>to</b> 1:30 PM <br/><b>Meeting Type</b> S = Step meeting"
+   },
+   {
+    "day": "Wednesdays ,</b> 12:30 PM <b>to</b> 1:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Fridays ,</b> 12:30 PM <b>to</b> 1:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting <br/><b>Special Interest</b> Topic"
+   },
+   {
+    "day": "Sundays ,</b> 12:30 PM <b>to</b> 1:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting <br/><b>Special Interest</b> Meditation"
+   },
+   {
+    "day": "Tuesdays ,</b> 5:15 PM <b>to</b> 6:15 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Fridays ,</b> 5:15 PM <b>to</b> 6:15 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Thursdays ,</b> 5:15 PM <b>to</b> 6:15 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Sundays ,</b> 5:15 PM <b>to</b> 6:15 PM <br/><b>Meeting Type</b> S = Step meeting"
+   },
+   {
+    "day": "Wednesdays ,</b> 5:15 PM <b>to</b> 6:15 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Mondays ,</b> 5:15 PM <b>to</b> 6:15 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting <br/><b>Special Interest</b> Living Sober"
+   },
+   {
+    "day": "Wednesdays ,</b> 6:30 PM <b>to</b> 7:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Saturdays ,</b> 6:30 PM <b>to</b> 7:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Tuesdays ,</b> 6:30 PM <b>to</b> 7:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Fridays ,</b> 6:30 PM <b>to</b> 7:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Mondays ,</b> 6:30 PM <b>to</b> 7:30 PM <br/><b>Meeting Type</b> B = Beginners meeting"
+   },
+   {
+    "day": "Thursdays ,</b> 6:30 PM <b>to</b> 7:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Sundays ,</b> 6:30 PM <b>to</b> 7:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Sundays ,</b> 8:00 PM <b>to</b> 9:15 PM <br/><b>Meeting Type</b> BB = Big Book meeting"
+   },
+   {
+    "day": "Wednesdays ,</b> 8:00 PM <b>to</b> 9:15 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting <br/><b>Special Interest</b> Men"
+   },
+   {
+    "day": "Saturdays ,</b> 8:00 PM <b>to</b> 9:15 PM <br/><b>Meeting Type</b> O = Open meeting"
+   },
+   {
+    "day": "Tuesdays ,</b> 8:00 PM <b>to</b> 9:15 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting <br/><b>Special Interest</b> Women"
+   },
+   {
+    "day": "Mondays ,</b> 8:00 PM <b>to</b> 9:15 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting <br/><b>Special Interest</b> Topic"
+   },
+   {
+    "day": "Fridays ,</b> 8:00 PM <b>to</b> 9:15 PM <br/><b>Meeting Type</b> S = Step meeting"
+   },
+   {
+    "day": "Thursdays ,</b> 8:00 PM <b>to</b> 9:15 PM <br/><b>Meeting Type</b> B = Beginners meeting <br/><b>Special Interest</b> Under Six Months Sober"
+   },
+   {
+    "day": "Sundays ,</b> 10:00 PM <b>to</b> 11:15 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Wednesdays ,</b> 10:00 PM <b>to</b> 11:15 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Saturdays ,</b> 10:00 PM <b>to</b> 11:15 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Tuesdays ,</b> 10:00 PM <b>to</b> 11:15 PM <br/><b>Meeting Type</b> S = Step meeting"
+   },
+   {
+    "day": "Mondays ,</b> 10:00 PM <b>to</b> 11:15 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Fridays ,</b> 10:00 PM <b>to</b> 11:15 PM <br/><b>Meeting Type</b> B = Beginners meeting"
+   },
+   {
+    "day": "Thursdays ,</b> 10:00 PM <b>to</b> 11:15 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting <br/><b>Special Interest</b> Topic <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 12",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Sundays ,</b> 12:30 PM <b>to</b> 1:30 PM <br/><b>Meeting Type</b> O = Open meeting <br/><b>Special Interest</b> Gay, Lesbian and Bisexual"
+   },
+   {
+    "day": "Wednesdays ,</b> 6:30 PM <b>to</b> 7:30 PM <br/><b>Meeting Type</b> B = Beginners meeting <br/><b>Special Interest</b> Gay, Lesbian and Bisexual"
+   },
+   {
+    "day": "Fridays ,</b> 7:30 PM <b>to</b> 8:30 PM <br/><b>Meeting Type</b> B = Beginners meeting <br/><b>Special Interest</b> Gay, Lesbian and Bisexual <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 13",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Wednesdays ,</b> 7:30 AM <b>to</b> 8:30 AM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Tuesdays ,</b> 7:30 AM <b>to</b> 8:30 AM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Mondays ,</b> 7:30 AM <b>to</b> 8:30 AM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Sundays ,</b> 7:30 AM <b>to</b> 8:30 AM <br/><b>Meeting Type</b> OD = Open Discussion meeting"
+   },
+   {
+    "day": "Saturdays ,</b> 7:30 AM <b>to</b> 8:30 AM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Fridays ,</b> 7:30 AM <b>to</b> 8:30 AM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Thursdays ,</b> 7:30 AM <b>to</b> 8:30 AM <br/><b>Meeting Type</b> S = Step meeting"
+   },
+   {
+    "day": "Thursdays ,</b> 9:00 AM <b>to</b> 10:00 AM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Wednesdays ,</b> 9:00 AM <b>to</b> 10:00 AM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Tuesdays ,</b> 9:00 AM <b>to</b> 10:00 AM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Mondays ,</b> 9:00 AM <b>to</b> 10:00 AM <br/><b>Meeting Type</b> OD = Open Discussion meeting"
+   },
+   {
+    "day": "Sundays ,</b> 9:00 AM <b>to</b> 10:00 AM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Fridays ,</b> 9:00 AM <b>to</b> 10:00 AM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Saturdays ,</b> 9:30 AM <b>to</b> 10:00 AM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Fridays ,</b> 10:30 AM <b>to</b> 11:30 AM <br/><b>Meeting Type</b> C = Closed Discussion meeting <br/><b>Special Interest</b> Women"
+   },
+   {
+    "day": "Sundays ,</b> 11:00 AM <b>to</b> 12:00 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Saturdays ,</b> 12:00 PM <b>to</b> 1:00 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Fridays ,</b> 12:15 PM <b>to</b> 1:15 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Thursdays ,</b> 12:15 PM <b>to</b> 1:15 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Wednesdays ,</b> 12:15 PM <b>to</b> 1:15 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Tuesdays ,</b> 12:15 PM <b>to</b> 1:15 PM <br/><b>Meeting Type</b> S = Step meeting"
+   },
+   {
+    "day": "Mondays ,</b> 12:15 PM <b>to</b> 1:15 PM <br/><b>Meeting Type</b> B = Beginners meeting"
+   },
+   {
+    "day": "Sundays ,</b> 1:00 PM <b>to</b> 2:00 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting <br/><b>Special Interest</b> Children Welcome"
+   },
+   {
+    "day": "Saturdays ,</b> 2:30 PM <b>to</b> 3:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Fridays ,</b> 2:30 PM <b>to</b> 3:30 PM <br/><b>Meeting Type</b> OD = Open Discussion meeting"
+   },
+   {
+    "day": "Thursdays ,</b> 2:30 PM <b>to</b> 3:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Tuesdays ,</b> 2:30 PM <b>to</b> 3:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Mondays ,</b> 2:30 PM <b>to</b> 3:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Wednesdays ,</b> 2:30 PM <b>to</b> 3:30 PM <br/><b>Meeting Type</b> B = Beginners meeting"
+   },
+   {
+    "day": "Sundays ,</b> 3:00 PM <b>to</b> 4:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Mondays ,</b> 4:00 PM <b>to</b> 5:00 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Saturdays ,</b> 4:00 PM <b>to</b> 5:00 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Thursdays ,</b> 4:00 PM <b>to</b> 5:00 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Wednesdays ,</b> 4:00 PM <b>to</b> 5:00 PM <br/><b>Meeting Type</b> OD = Open Discussion meeting"
+   },
+   {
+    "day": "Tuesdays ,</b> 4:00 PM <b>to</b> 5:00 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Fridays ,</b> 4:00 PM <b>to</b> 6:00 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Thursdays ,</b> 5:30 PM <b>to</b> 6:30 PM <br/><b>Meeting Type</b> BB = Big Book meeting"
+   },
+   {
+    "day": "Mondays ,</b> 6:00 PM <b>to</b> 7:00 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Saturdays ,</b> 6:00 PM <b>to</b> 7:00 PM <br/><b>Meeting Type</b> OD = Open Discussion meeting"
+   },
+   {
+    "day": "Sundays ,</b> 6:00 PM <b>to</b> 7:00 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Fridays ,</b> 6:00 PM <b>to</b> 7:00 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Wednesdays ,</b> 6:00 PM <b>to</b> 7:00 PM <br/><b>Meeting Type</b> S = Step meeting"
+   },
+   {
+    "day": "Tuesdays ,</b> 6:00 PM <b>to</b> 7:00 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Thursdays ,</b> 7:00 PM <b>to</b> 8:00 PM <br/><b>Meeting Type</b> B = Beginners meeting"
+   },
+   {
+    "day": "Tuesdays ,</b> 8:30 PM <b>to</b> 9:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Mondays ,</b> 8:30 PM <b>to</b> 9:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Saturdays ,</b> 8:30 PM <b>to</b> 9:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Sundays ,</b> 8:30 PM <b>to</b> 9:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Thursdays ,</b> 8:30 PM <b>to</b> 9:30 PM <br/><b>Meeting Type</b> OD = Open Discussion meeting"
+   },
+   {
+    "day": "Fridays ,</b> 8:30 PM <b>to</b> 10:30 PM <br/><b>Meeting Type</b> S = Step meeting"
+   },
+   {
+    "day": "Wednesdays ,</b> 8:30 PM <b>to</b> 9:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Tuesdays ,</b> 10:15 PM <b>to</b> 11:15 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Mondays ,</b> 10:15 PM <b>to</b> 11:15 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Thursdays ,</b> 10:15 PM <b>to</b> 11:15 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Wednesdays ,</b> 10:15 PM <b>to</b> 11:15 PM <br/><b>Meeting Type</b> BB = Big Book meeting"
+   },
+   {
+    "day": "Sundays ,</b> 10:30 PM <b>to</b> 11:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Saturdays ,</b> 11:00 PM <b>to</b> 12:00 AM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Fridays ,</b> 11:00 PM <b>to</b> 12:00 AM <br/><b>Meeting Type</b> C = Closed Discussion meeting <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 14",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Thursdays ,</b> 6:30 PM <b>to</b> 7:45 PM <br/><b>Meeting Type</b> OD = Open Discussion meeting"
+   },
+   {
+    "day": "Tuesdays ,</b> 6:30 PM <b>to</b> 7:45 PM <br/><b>Meeting Type</b> S = Step meeting <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 15",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Sundays ,</b> 7:00 PM <b>to</b> 8:00 PM <br/><b>Meeting Type</b> S = Step meeting <br/><b>Special Interest</b> Gay, Lesbian and Bisexual"
+   },
+   {
+    "day": "Thursdays ,</b> 7:00 PM <b>to</b> 8:00 PM <br/><b>Meeting Type</b> B = Beginners meeting <br/><b>Special Interest</b> Gay, Lesbian and Bisexual"
+   },
+   {
+    "day": "Fridays ,</b> 7:00 PM <b>to</b> 8:00 PM <br/><b>Meeting Type</b> OD = Open Discussion meeting <br/><b>Special Interest</b> Promises"
+   },
+   {
+    "day": "Sundays ,</b> 8:30 PM <b>to</b> 9:30 PM <br/><b>Meeting Type</b> OD = Open Discussion meeting <br/><b>Special Interest</b> Gay, Lesbian and Bisexual"
+   },
+   {
+    "day": "Fridays ,</b> 8:30 PM <b>to</b> 9:30 PM <br/><b>Meeting Type</b> OD = Open Discussion meeting <br/><b>Special Interest</b> Gay, Lesbian and Bisexual <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 16",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Mondays ,</b> 7:30 AM <b>to</b> 8:30 AM <br/><b>Meeting Type</b> BB = Big Book meeting"
+   },
+   {
+    "day": "Tuesdays ,</b> 7:30 AM <b>to</b> 8:30 AM <br/><b>Meeting Type</b> B = Beginners meeting"
+   },
+   {
+    "day": "Wednesdays ,</b> 7:30 AM <b>to</b> 8:30 AM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Thursdays ,</b> 7:30 AM <b>to</b> 8:30 AM <br/><b>Meeting Type</b> C = Closed Discussion meeting <br/><b>Special Interest</b> Promises"
+   },
+   {
+    "day": "Fridays ,</b> 7:30 AM <b>to</b> 8:30 AM <br/><b>Meeting Type</b> S = Step meeting <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 17",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Sundays ,</b> 7:30 AM <b>to</b> 8:30 AM <br/><b>Special Interest</b> Topic"
+   },
+   {
+    "day": "Saturdays ,</b> 7:30 AM <b>to</b> 8:30 AM <br/><b>Special Interest</b> Topic <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 18",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Saturdays ,</b> 6:00 PM <b>to</b> 7:00 PM <br/><b>Meeting Type</b> B = Beginners meeting <br/><b>Special Interest</b> Gay, Lesbian and Bisexual <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 19",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Fridays ,</b> 6:30 PM <b>to</b> 7:30 PM <br/><b>Meeting Type</b> B = Beginners meeting <br/><b>Special Interest</b> Interpreted for the Deaf"
+   },
+   {
+    "day": "Mondays ,</b> 7:00 PM <b>to</b> 8:00 PM <br/><b>Meeting Type</b> B = Beginners meeting"
+   },
+   {
+    "day": "Fridays ,</b> 8:00 PM <b>to</b> 9:00 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting"
+   },
+   {
+    "day": "Mondays ,</b> 8:30 PM <b>to</b> 9:30 PM <br/><b>Meeting Type</b> S = Step meeting <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 20",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Sundays ,</b> 11:00 AM <b>to</b> 12:15 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting <br/><b>Special Interest</b> Eleventh Step <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 21",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Mondays ,</b> 6:30 PM <b>to</b> 7:30 PM <br/><b>Special Interest</b> Women <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 22",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Tuesdays ,</b> 8:00 PM <b>to</b> 9:00 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 23",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Thursdays ,</b> 7:00 PM <b>to</b> 8:00 PM <br/><b>Meeting Type</b> BB = Big Book meeting <br/><b>Special Interest</b> Men <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 24",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Tuesdays ,</b> 6:45 PM <b>to</b> 8:00 PM <br/><b>Meeting Type</b> S = Step meeting <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 25",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Wednesdays ,</b> 6:15 PM <b>to</b> 7:15 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 26",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Thursdays ,</b> 6:30 PM <b>to</b> 7:45 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting <br/><b>Special Interest</b> Women <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 27",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Saturdays ,</b> 4:45 PM <b>to</b> 5:45 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting <br/><b>Special Interest</b> Women <br/> <br/> "
+   }
+  ]
+ },
+ {
+  "eventname": "item 28",
+  "meetingTimesArray": [
+   {
+    "day": " <b>Fridays ,</b> 6:15 PM <b>to</b> 7:30 PM <br/><b>Meeting Type</b> C = Closed Discussion meeting <br/><b>Special Interest</b> Lesbian <br/> <br/> "
+   }
+  ]
+ }
+]
