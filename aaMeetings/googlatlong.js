@@ -21,43 +21,12 @@ var apiKey = fs.readFileSync('cred.txt*.pyc, __pycache__, .*','utf8');
 
 // Read Synchrously
 console.log("\n *START* \n");
-
-request('https://raw.githubusercontent.com/ryezzz/data-structures/master/assignment-5/array.JSON', function(error, response, body) {
+// https://raw.githubusercontent.com/ryezzz/data-structures/master/assignment-5/array.JSON
+// https://raw.githubusercontent.com/ryezzz/data-structures/master/assignment-5/oldarray.JSON
+request('https://raw.githubusercontent.com/ryezzz/data-structures/master/assignment-5/oldarray.JSON', function(error, response, body) {
     var dataFromJSON = JSON.parse(body);
     console.log( dataFromJSON)
-    // addressData.push(dataFromJSON);
-    
-
-
-
-
-// _______________________  creating array from assignment_2  _______________________________
-// Declares meetingData array and parses and pushes text file to meetingsData array
-// var newObj = Object.create(dataFromJSON);
-// console.log (newObj);
-// var addressData = dataFromJSON;
-// var buildingData =[];
-
-// $("td").each(function(i, elem){
-//     if($(elem).attr('style') == "border-bottom:1px solid #e3e3e3; width:260px"){
-//         var building = $(elem).children().first().text();
-//         var group = $(elem).eq(6).text();
-//         var firstHalf = $(elem).contents().get(6).nodeValue.trim().replace(/,.*,/, '').split(',')[0].split('(')[0] +" NYC";
-//         var secondHalf = $(elem).contents().get(8).nodeValue.trim().slice(-6);
-//         addressData.push(firstHalf+secondHalf);
-//         buildingData.push(building)
-//     }
-// });
-
-
-// $("td").each(function(i, elem){
-//     if($(elem).attr('style') == "margin:0;padding:0;"){
-//         var building = $(elem).children().first().text()
-//         addressData.push(building);
-//     }
-// });
-
-
+  
 
 // _______________________ Console.logs lat and long for each address in meetingsDat _______________________________
 var meetingsDataForObject= [];
@@ -82,7 +51,7 @@ async.eachSeries(dataFromJSON, function(value, callback) {
     
      //  setTimeout calls back eachSeries function after 250 milliseconds 
    
-    setTimeout(callback, 250);
+    setTimeout(callback, 2000);
     
     //  function fires at end the eachSeries loop
 }, function() {
