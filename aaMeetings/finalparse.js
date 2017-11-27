@@ -80,7 +80,9 @@ function oneZoneParse(){
                                               .trim()
                                               .slice(-6);
                                             
-                thisMeetingtimefirst.address = firstHalf+secondHalf;
+                var address = firstHalf+secondHalf;
+                thisMeetingtimefirst.address = address.replace('65 East 89th Street - Rectory basement NYC', '65 East 89th Street NYC')
+                //701 West 168th Street @ Fort Washington Avenue NYC 10032
                 
                 
                thisMeetingtimefirst.building = firstCell
