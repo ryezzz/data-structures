@@ -23,7 +23,7 @@ var apiKey = fs.readFileSync('cred.txt*.pyc, __pycache__, .*','utf8');
 console.log("\n *START* \n");
 // https://raw.githubusercontent.com/ryezzz/data-structures/master/assignment-5/array.JSON
 // https://raw.githubusercontent.com/ryezzz/data-structures/master/assignment-5/oldarray.JSON
-request('https://raw.githubusercontent.com/ryezzz/data-structures/master/aaMeetings/miniarray.JSON', function(error, response, body) {
+request('https://raw.githubusercontent.com/ryezzz/data-structures/master/aaMeetings/array.JSON', function(error, response, body) {
     var dataFromJSON = JSON.parse(body);
     console.log( dataFromJSON)
   
@@ -51,7 +51,7 @@ async.eachSeries(dataFromJSON, function(value, callback) {
     
      //  setTimeout calls back eachSeries function after 250 milliseconds 
    
-    setTimeout(callback, 2000);
+    setTimeout(callback, 250);
     
     //  function fires at end the eachSeries loop
 }, function() {
