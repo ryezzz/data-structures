@@ -23,7 +23,7 @@ var apiKey = fs.readFileSync('cred.txt*.pyc, __pycache__, .*','utf8');
 console.log("\n *START* \n");
 // https://raw.githubusercontent.com/ryezzz/data-structures/master/assignment-5/array.JSON
 // https://raw.githubusercontent.com/ryezzz/data-structures/master/assignment-5/oldarray.JSON
-request('https://raw.githubusercontent.com/ryezzz/data-structures/master/aaMeetings/miniarray.JSON', function(error, response, body) {
+request('https://raw.githubusercontent.com/ryezzz/data-structures/master/aaMeetings/arraythirdpart.JSON', function(error, response, body) {
     var dataFromJSON = JSON.parse(body);
     console.log( dataFromJSON)
   
@@ -65,7 +65,7 @@ async.eachSeries(dataFromJSON, function(value, callback) {
 console.log(meetingsDataForObject);
 
 require('fs').writeFile(
-    './meetings.JSON',
+    './meetings2.JSON',
     JSON.stringify(meetingsDataForObject),
     function (err) {
         if (err) {
