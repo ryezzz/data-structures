@@ -51,7 +51,7 @@ async.eachSeries(dataFromJSON, function(value, callback) {
     
      //  setTimeout calls back eachSeries function after 250 milliseconds 
    
-    setTimeout(callback, 250);
+    setTimeout(callback, 1000);
     
     //  function fires at end the eachSeries loop
 }, function() {
@@ -65,7 +65,7 @@ async.eachSeries(dataFromJSON, function(value, callback) {
 console.log(meetingsDataForObject);
 
 require('fs').writeFile(
-    './meetings2.JSON',
+    './meetings3.JSON',
     JSON.stringify(meetingsDataForObject),
     function (err) {
         if (err) {

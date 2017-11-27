@@ -1183,19 +1183,6 @@
  },
  {
   "zone": 7,
-  "group": "ROOSEVELT ISLAND SERENITY",
-  "address": "Church of the Good Shepard NYC",
-  "building": "",
-  "floor": "543 Main St.",
-  "meetingType": "C = Closed Discussion meeting ",
-  "details": " ",
-  "access": "Yes",
-  "day": "Saturday",
-  "startTimeHour": 18,
-  "startTimeMinute": 30
- },
- {
-  "zone": 7,
   "group": "SEVENTY",
   "address": "413 East 79th Street NYC 10021",
   "building": "St. Monica&apos;s Church",
@@ -2783,7 +2770,7 @@
  {
   "zone": 10,
   "group": "A NEW WAY OF LIVING",
-  "address": "701 West 168th Street @ Fort Washington Avenue NYC 10032",
+  "address": "701 West 168th Street Fort Washington Avenue NYC 10032",
   "building": "Columbia Presbyterian Hospital",
   "floor": "",
   "meetingType": "S = Step meeting",
@@ -2796,7 +2783,7 @@
  {
   "zone": 10,
   "group": "A NEW WAY OF LIVING",
-  "address": "701 West 168th Street @ Fort Washington Avenue NYC 10032",
+  "address": "701 West 168th Street Fort Washington Avenue NYC 10032",
   "building": "Columbia Presbyterian Hospital",
   "floor": "",
   "meetingType": "C = Closed Discussion meeting ",
@@ -2809,7 +2796,7 @@
  {
   "zone": 10,
   "group": "A NEW WAY OF LIVING",
-  "address": "701 West 168th Street @ Fort Washington Avenue NYC 10032",
+  "address": "701 West 168th Street Fort Washington Avenue NYC 10032",
   "building": "Columbia Presbyterian Hospital",
   "floor": "",
   "meetingType": "BB = Big Book meeting",
@@ -2822,7 +2809,7 @@
  {
   "zone": 10,
   "group": "A NEW WAY OF LIVING",
-  "address": "701 West 168th Street @ Fort Washington Avenue NYC 10032",
+  "address": "701 West 168th Street Fort Washington Avenue NYC 10032",
   "building": "Columbia Presbyterian Hospital",
   "floor": "",
   "meetingType": "B = Beginners meeting",
@@ -2835,7 +2822,7 @@
  {
   "zone": 10,
   "group": "A NEW WAY OF LIVING",
-  "address": "701 West 168th Street @ Fort Washington Avenue NYC 10032",
+  "address": "701 West 168th Street Fort Washington Avenue NYC 10032",
   "building": "Columbia Presbyterian Hospital",
   "floor": "",
   "meetingType": "C = Closed Discussion meeting ",
@@ -3095,7 +3082,7 @@
  {
   "zone": 10,
   "group": "GRUPO RECUPERACION",
-  "address": "502 West165th Street NYC 10032",
+  "address": "502 West 165th Street NYC 10032",
   "building": "Church Santa Rosa de Lima",
   "floor": "Basement",
   "meetingType": "O = Open meeting",
@@ -3108,7 +3095,7 @@
  {
   "zone": 10,
   "group": "GRUPO RECUPERACION",
-  "address": "502 West165th Street NYC 10032",
+  "address": "502 West 165th Street NYC 10032",
   "building": "Church Santa Rosa de Lima",
   "floor": "Basement",
   "meetingType": "C = Closed Discussion meeting",
@@ -3121,7 +3108,7 @@
  {
   "zone": 10,
   "group": "GRUPO RECUPERACION",
-  "address": "502 West165th Street NYC 10032",
+  "address": "502 West 165th Street NYC 10032",
   "building": "Church Santa Rosa de Lima",
   "floor": "Basement",
   "meetingType": "O = Open meeting ",
