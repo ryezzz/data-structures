@@ -81,7 +81,9 @@ function oneZoneParse(){
                                               .slice(-6);
                                             
                 var address = firstHalf+secondHalf;
-                thisMeetingtimefirst.address = address.replace('65 East 89th Street - Rectory basement NYC', '65 East 89th Street NYC')
+                thisMeetingtimefirst.address = address.replace('65 East 89th Street - Rectory basement NYC', '65 East 89th Street NYC').replace('Central Park West & 76th Street - basement gymnasium NYC 10023', "Central Park West & 76th StreetNYC 10023")
+                
+                
                 //701 West 168th Street @ Fort Washington Avenue NYC 10032
                 
                 
@@ -136,6 +138,7 @@ function oneZoneParse(){
                                               .split('<h4 style="margin:0;padding:0;">')[0]
                                               .replace('<br/>', '')
                                               .split('<h4 style="margin:0;padding:0;"/>')[0]
+                                              .replace("<br/>", ':')
                                             // //   var details = $(elem).children('div')
                                             //     .text()
                                             //     .slice(1)
@@ -176,8 +179,25 @@ function oneZoneParse(){
               var startHour = make24(starttimeAMPM, hour, minute)
               var startMinute = make24(starttimeAMPM, hour, minute)
               
-                thisMeetingtimefirst.day = secondCellIterated.split('s From</b> ')[0]
+                var day = secondCellIterated.split('s From</b> ')[0]
                                                              .replace(' <b>', '')
+                 thisMeetingtimefirst.day = day;                                           
+                                                             
+                function daystonumbers(){
+                    if (day == "Sunday"){ return 0}
+                    else if (day == "Monday"){ return 1}
+                    else if (day == "Tuesday"){ return 2}
+                    else if (day == "Wednesday"){ return 3}
+                    else if (day == "Thursday"){ return 4}
+                    else if (day == "Friday"){return 5}
+                    else if (day == "Saturday"){return 6}
+                    
+                }              
+                
+                
+                thisMeetingtimefirst.queryday = daystonumbers();
+                
+
               thisMeetingtimefirst.startTimeHour = (make24(starttimeAMPM, hour, minute))
               
               thisMeetingtimefirst.startTimeMinute = +minute
