@@ -51,7 +51,7 @@ async.eachSeries(dataFromJSON, function(value, callback) {
     
      //  setTimeout calls back eachSeries function after 250 milliseconds 
    
-    setTimeout(callback, 1000);
+    setTimeout(callback, 250);
     
     //  function fires at end the eachSeries loop
 }, function() {
