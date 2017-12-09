@@ -1,0 +1,133 @@
+;
+            function makeContent(cont) {
+            var contentHolder = '<div id="content">' +
+                '<div id="siteNotice">' +
+                '</div>';
+                
+            for (var i = 0; i < cont.meetingGroups.length; i++) {
+            
+            if (i == 0) {
+            contentHolder = contentHolder + '<h2>' + cont.meetingGroups[i].groupInfo.address.split("NYC")[0] + '</h2>';
+            } 
+           // console.log(cont.meetingGroups[i])
+                contentHolder = contentHolder + '<h1 id="firstHeading" class="firstHeading">';
+                contentHolder = contentHolder + cont.meetingGroups[i].groupInfo.meetingGroup+ '</h1>';
+                contentHolder = contentHolder + "Accessible: " + cont.meetingGroups[i].groupInfo.WheelChair + "<br>"  + "<br>";
+
+               meetingDay = cont.meetingGroups[i].meetingDay;
+                
+            // loop through days
+            
+                daysForCheckingRepeat = []
+                typesForCheckingRepeat = []
+                
+                
+                
+                for (var j = 0; j<meetingDay.length; j++){
+                
+
+
+                    
+                             
+                var hour = cont.meetingGroups[i].startTimeHour[j];
+                var minute = cont.meetingGroups[i].startTimeMinutes[j]
+                daysForCheckingRepeat.push(meetingDay[j])
+                
+                        
+                        // Check every day for a repeat previous day
+                        
+                        for( var k = daysForCheckingRepeat.length; k>0; k--){
+                        var meetingDayFiltered; 
+                                if(daysForCheckingRepeat[k] != meetingDay[j]){
+                                 meetingDayFiltered = meetingDay[j];
+                                } else { meetingDayFiltered = ""}
+                        }
+                
+                
+                        console.log(meetingDayFiltered)
+               
+                
+                
+            //function checks if minute is "0" and turns it to "00"
+                
+                                     function minCheck (min) {
+                                        if (min == 0){
+                                        min = "00";
+                                        return min;
+                                        } else { return min }
+                                    }
+                                    
+                                    
+           //Converts military to standard time                         
+                                    function miltostandard(militaryhour, minutes){
+                                    
+                                    if (militaryhour>12){
+                                    return militaryhour-12 + ":" + minCheck(minutes) + " PM";
+                                    } else {
+                                    return militaryhour + ":" + minCheck(minutes) + " AM";
+                                    }
+                                    }
+
+                
+              if(meetingDayFiltered){ contentHolder = contentHolder + "<span class = 'line'>" + meetingDayFiltered + "</span>" +'<br>'+ "<span class = 'time'>" + miltostandard(hour, minute) + "</span>" + "</b>" + ' ' +'<br>';
+            
+                } else { contentHolder = contentHolder + "<span class = 'time'>" + miltostandard(hour, minute)+ "</span>" + ' ' +'<br>'}
+                
+                var meetingtype = cont.meetingGroups[i].meetingType[j].substring(4)
+                contentHolder = contentHolder + meetingtype + "<br>"
+                
+                var meetingFloor = cont.meetingGroups[i].meetingFloor[j]
+                contentHolder = contentHolder + meetingFloor + "<br>"
+                     }
+            
+
+        
+        
+        
+        
+                contentHolder = contentHolder + '</p>';
+                contentHolder = contentHolder + '<div class="iw-bottom-gradient"></div>';
+            }
+            return contentHolder;
+        }
+
+        function setMarkers(map, locations) {
+            
+            
+            
+            
+            // Add markers to the map
+            var infowindow = new google.maps.InfoWindow({
+                minWidth: 300
+            });
+
+            for (var i = 0; i < locations.length; i++) {
+                var meeting = locations[i];
+                var myLatLng = new google.maps.LatLng(meeting._id.latLong);
+
+                var contentWindow = makeContent(meetings[i]);
+    
+                
+                var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    title: "Click for meeting info",
+                    //this is where I can type hello and see it in my marker
+                    content: contentWindow,
+                });
+
+                google.maps.event.addListener(marker, 'click', function() {
+                    infowindow.setContent(this.content);
+                    infowindow.open(map, this);
+                });
+            }
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+
+<body>
+    <div id="map-canvas"></div>
+</body>
+
+</html>

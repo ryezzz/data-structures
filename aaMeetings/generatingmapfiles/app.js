@@ -2,6 +2,7 @@ var express = require('express'),
     app = express();
 var fs = require('fs');
 
+
 // Postgres
 const { Pool } = require('pg');
 var db_credentials = new Object();
@@ -49,46 +50,61 @@ app.get('/aa', function(req, res) {
         if (err) {return console.dir(err);}
 
         var dateTimeNow = new Date();
+
         var today = dateTimeNow.getDay();
+
         var tomorrow;
         if (today == 6) {tomorrow = 0;}
         else {tomorrow = today + 1}
         var hour = dateTimeNow.getHours();
 
         var collection = db.collection(collName);
+        
+        
+        collection.aggregate([ // start of aggr egation pipeline
 
-        collection.aggregate([ // start of aggregation pipeline
-            // match by day and time
+
             { $match :
-                { $or : [
+                { $or : [ 
                     { $and: [
-                        { startTimeHour : { $gte: 5 } }
+                        
+
+                         { queryday : today } , { startTimeHour :  { $gte: hour } }
+                        // { queryday : 0 }
                     ]},
                     { $and: [
-                        { startTimeHour : { $lte: 4 } }
+                        
+
+                        { queryday : tomorrow }, { startTimeHour: { $lte: hour}}
                     ]}
                 ]}
             },
+// This puts the days in the correct order WITHIN the groups
+
+            {
+                $sort: {queryday: -1 }
+                
+            },
+
 
             // group by meeting group
-            { $group : { _id : {
-                // group : "$group",
+            { 
+            $group : 
+                { _id : 
+                    {
+                //it's challenging to have my meeting name as group
                 latLong : "$latLong",
-                zone : "$zone",
-                floor : "$floor",
+                meetingGroup : "$group",
                 address : "$address",
-                building : "$building",
-                zone : "$zone",
-                details : "$details",
-                access : "$access",
-                meetingType: "$meetingType",
-                day:"$day",
-                startTimeHour:"$startTimeHour"
+                WheelChair : "$access",
+
                 },
-                
-                meetingDay : { $push : "$day" },
-                meetingStartTimeHour : { $push : "$startTimeHour" }
-                // meetingType : { $push : "$meetingType" }
+                     meetingDay : { $push : "$day"
+                     },
+                    startTimeHour : { $push : "$startTimeHour" },
+                    startTimeMinutes : { $push : "$startTimeMinute" },
+                    meetingType : { $push : "$meetingType" },
+                    meetingFloor : { $push : "$floor" }
             }
             },
             
@@ -97,13 +113,15 @@ app.get('/aa', function(req, res) {
             // group meeting groups by latLong
             {
                 $group : { _id : { 
-                    latLong : "$_id.latLong"},
-                    meetingGroups : { $push : {groupInfo : "$_id", group : "$groupName", meetingStartTimeHour : "$startTimeHour", meetingType : "$meetingType" }}
+                    latLong : "$_id.latLong",
+                },
+                
+                //Everything that is associated with a single time is included in this section
+                                    meetingGroups : { $push : {groupInfo : "$_id" , meetingDay : "$meetingDay", startTimeHour : "$startTimeHour", startTimeMinutes : "$startTimeMinutes", meetingType : "$meetingType",  meetingFloor : "$meetingFloor"}},
 
-                    // meetingGroups : { $push : {groupZone: "$zone"}}
                 }
-            }
-            
+            },
+        
             
             ]).toArray(function(err, docs) { // end of aggregation pipeline
             if (err) {console.log(err)}

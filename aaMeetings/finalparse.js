@@ -100,7 +100,11 @@ function oneZoneParse(){
                                              .get(6)
                                              .nodeValue.trim()
                                              .split(',')[1]
-                                             .slice(1);
+                                             .slice(1)
+                                             .replace('NY 10027', '')
+                                             
+                                             .replace('10012', '')
+
                                              
                        
             thisMeetingtimefirst.meetingType = secondCellIterated

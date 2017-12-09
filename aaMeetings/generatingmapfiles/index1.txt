@@ -5,6 +5,9 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>AA Meetings in Manhattan</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Padauk" rel="stylesheet">
+
     <style>
         html,
         body,
@@ -12,14 +15,54 @@
             height: 100%;
             margin: 0;
             padding: 0;
+            
+
+        }
+        
+        #content {
+                    font-family: 'Padauk', sans-serif;
+
         }
 
         #firstHeading {
-            font-size: 100%;
+            padding-top: 1%;
+            font-size: 20px;
+            margin: 0px;
+            font-family: 'Padauk', sans-serif;
+        }
+        
+        .line{
+        border-bottom: 1px solid lightgray;
+
+        }
+        
+        
+        h2 {
+            font-size: 20px;
+            margin: 0px;
+            color: darkgray;
+            border-bottom: 1px solid lightgray;
+
+        }
+        
+        .time {
+            font-size: 18px;
+
         }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvnXhUOVfrVjhLJIYzGB6nD_z4ptqPrPY&v=3.exp&signed_in=true"></script>
+
+    
     <script>
+ /////STYLED MAP
+ 
+ 
+ 
+ 
+ 
+ //////ENDSTYLEDMA
+    
+    
         var latNow = 40.736354;
         var longNow = -73.999175;
 
