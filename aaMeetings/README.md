@@ -1,4 +1,4 @@
-This is a web scraping of AA meetings in Manhattan. I started with a series of disorganized, difficult to read websites such as [this](http://visualizedata.github.io/datastructures/data/m01.html), parsed and mapped them. Here is the final product that shows the user meetings within in the next 24 hours: http://ec2-34-207-205-222.compute-1.amazonaws.com/port:3000/aa
+This is a web scraping of AA meetings in Manhattan. I started with a series of disorganized, difficult to read websites such as [this](http://visualizedata.github.io/datastructures/data/m01.html), parsed and mapped them. Here is the final product that shows the user meetings within in the next 24 hours: http://ec2-34-207-205-222.compute-1.amazonaws.com:3000/aa
 
 <img width="602" alt="screen shot 2017-12-09 at 6 18 57 pm" src="https://user-images.githubusercontent.com/15457713/33800655-3bcc7d56-dd12-11e7-9c41-5f057e986451.png">
 
