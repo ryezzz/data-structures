@@ -9,7 +9,7 @@ var collName = 'all_meeting_data'; // name of Mongo collection (created in the M
 
 // Request the JSON data 
 // Insert the list of address data (contained in an array) in the Mongo collection
-request('https://raw.githubusercontent.com/ryezzz/data-structures/master/assignment-5/meetings.JSON', function(error, response, body) {
+request('https://raw.githubusercontent.com/ryezzz/data-structures/master/aaMeetings/meetings.JSON', function(error, response, body) {
     var aaData = JSON.parse(body);
 
     // Connection URL
