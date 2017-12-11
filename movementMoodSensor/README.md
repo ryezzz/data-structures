@@ -1,15 +1,21 @@
-This is a web scraping of AA meetings in Manhattan. I started with a series of disorganized, difficult to read websites such as [this](http://visualizedata.github.io/datastructures/data/m01.html), parsed and mapped them. The final product shows meetings within in the next 24 hours: http://ec2-34-207-205-222.compute-1.amazonaws.com:3000/aa
 
-<img width="602" alt="screen shot 2017-12-09 at 6 18 57 pm" src="https://user-images.githubusercontent.com/15457713/33800655-3bcc7d56-dd12-11e7-9c41-5f057e986451.png">
+<img width="713" alt="screen shot 2017-12-10 at 11 19 29 pm" src="https://user-images.githubusercontent.com/15457713/33815894-1c53ea9e-de03-11e7-9045-7bd4c72d25fc.png">
 
-I parsed and prepared many more data than I decided to display on the map. Data such as "building" were repetitive, so I decided to remove them. 
-
-<img width="396" alt="screen shot 2017-12-09 at 10 21 11 pm" src="https://user-images.githubusercontent.com/15457713/33801642-6f47e5ea-dd2f-11e7-86bc-e93c9875f75c.png">
+For this project, I recorded my movement and mood using two sensors and then sent the data to 
+an SQL table [located within an EC2 instance here](http://ec2-34-207-205-222.compute-1.amazonaws.com:3000/s)
 
 
-[Here's](https://raw.githubusercontent.com/ryezzz/data-structures/master/aaMeetings/generatingmapfiles/app.js) my app and mongo query.
+Here is my SQL query. I'm sorting by amount of movement, lowest to highest.
 
-[Here's](https://raw.githubusercontent.com/ryezzz/data-structures/master/aaMeetings/finalparse.js
-) my parsing code
+_SELECT EXTRACT(DAY FROM sensortime AT TIME ZONE 'America/New_York') as sensorday,
+                EXTRACT(MONTH FROM sensortime AT TIME ZONE 'America/New_York') as sensormonth,
+                count(*) as num_obs,
+                avg(irmovement) as dailymovement,
+                avg(potentiometerstrength) as dailymood
+                FROM movementData
+                GROUP BY sensorday, sensormonth
+                ORDER BY dailymovement_
 
-[Here's](https://raw.githubusercontent.com/ryezzz/data-structures/master/aaMeetings/generatingmapfiles/index3.html) my final parsing of the data to get it ready for display.
+The full running application code is available [here](https://github.com/ryezzz/data-structures/blob/master/aaMeetings/generatingmapfiles/app.js). 
+                
+[Here](https://github.com/ryezzz/data-structures/blob/master/assignment-9/app.js) is the code that allowed me to insert my photon data into my SQL table.
